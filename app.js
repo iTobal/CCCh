@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const res = await fetch('/api/registro', {
+        const res = await fetch('https://ccch.onrender.com/api/registro', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(datos)
