@@ -15,12 +15,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 // Configuración de la Base de Datos PostgreSQL
+//CAMBIO 1 PARA CARGAR RENDER
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'comunidad_db',
-    password: '0206',
-    port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false // Importante para Render
+  }
 });
 
 // Crear tablas automáticamente y asegurar el admin con clave 0206 al iniciar
