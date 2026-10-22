@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 const JWT_SECRET = 'comunidad_cientifica_chile_secreto_2026';
 
 // Middleware
@@ -249,6 +248,8 @@ app.delete('/api/admin/solicitudes/:id', async (req, res) => {
     }
 });
 
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
