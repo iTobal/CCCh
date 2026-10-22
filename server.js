@@ -16,7 +16,6 @@ app.use(express.static(path.join(__dirname)));
 
 // Configuración de la Base de Datos PostgreSQL
 //CAMBIO 1 PARA CARGAR RENDER
-const { Pool } = require('pg');
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
